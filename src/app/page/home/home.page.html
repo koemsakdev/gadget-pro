@@ -1,13 +1,103 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-avatar slot="start" class="ion-margin-start">
+      <img src="https://i.pravatar.cc/150?u=user" />
+    </ion-avatar>
+    <ion-title class="ion-text-center"><b>Gadget</b>Pro</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="medium">
+        <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">home</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <swiper-container
+    pagination="true"
+    pagination-clickable="true"
+    autoplay-delay="3000"
+    class="hero-swiper"
+  >
+    <swiper-slide>
+      <div class="hero-card">
+        <div class="hero-text">
+          <h3>Collection of 2026</h3>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="https://slimbook.com/web/image/62731/HERO_Pantallas_Inteligencia%20Artificial-4-venus_B3.png" />
+        </div>
+      </div>
+    </swiper-slide>
+
+    <swiper-slide>
+      <div class="hero-card alternate-color">
+        <div class="hero-text">
+          <h3>Exclusive Razer Deals</h3>
+        </div>
+        <div class="hero-image-wrapper">
+          <img src="https://assets2.razerzone.com/images/pnx.assets/8430adae71b21392fc11b689abe2b517/razer-fotl-hero-1920x700.webp" />
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="category-row">
+    <div class="cat-item active">
+      <ion-icon name="laptop-outline"></ion-icon>
+      <span>Laptop</span>
+    </div>
+    <div class="cat-item">
+      <ion-icon name="desktop-outline"></ion-icon>
+      <span>Desktop</span>
+    </div>
+    <div class="cat-item">
+      <ion-icon name="headset-outline"></ion-icon>
+      <span>Gadgets</span>
+    </div>
+  </div>
+
+  <div class="section-header">
+    <h2>Popular Product</h2>
+  </div>
+
+  <ion-row>
+    <ion-col size="6" *ngFor="let p of popularProducts">
+      <div class="product-card">
+        <div class="discount-badge" *ngIf="p.discount">-{{p.discount}}%</div>
+        <img [src]="p.image" />
+        <div class="p-info">
+          <h4>{{p.name}}</h4>
+          <p>{{p.brand}}</p>
+          <div class="price-row">
+            <span>${{p.price}}</span>
+            <div class="add-btn"><ion-icon name="add"></ion-icon></div>
+          </div>
+        </div>
+      </div>
+    </ion-col>
+  </ion-row>
+
+  <div class="section-header">
+    <h2>Best Selling</h2>
+    <small>1/10</small>
+  </div>
+
+  <div class="best-selling-item" *ngFor="let item of bestSelling">
+    <img [src]="item.image" />
+    <div class="item-details">
+      <h4>{{item.name}}</h4>
+      <div class="rating">
+        <ion-icon
+          name="star"
+          color="warning"
+          *ngFor="let s of [1,2,3,4,5]"
+        ></ion-icon>
+      </div>
+      <div class="price-row">
+        <span>${{item.price}}</span>
+        <ion-button size="small" shape="round">Order</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
