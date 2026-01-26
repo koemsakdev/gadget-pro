@@ -1,0 +1,74 @@
+ion-tab-bar {
+  --border: none;
+  --background: transparent;
+  height: 70px;
+  position: relative;
+  
+  /* Allow the bar itself to overflow */
+  contain: none; 
+  overflow: visible;
+
+  /* Target the internal container to stop clipping */
+  &::part(container) {
+    overflow: visible;
+    contain: none;
+  }
+}
+
+.tab-bar-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+
+  svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px -4px 8px rgba(0, 0, 0, 0.05));
+  }
+}
+
+// Standard Button Styles
+ion-tab-button {
+  --background: transparent;
+  --color: #a2a2a2;
+  --color-selected: var(--ion-color-primary);
+  transition: all 0.3s ease-in-out;
+  
+  ion-icon {
+    font-size: 26px;
+  }
+}
+
+
+.prominent-cart {
+  --ripple-color: transparent;
+  overflow: visible;
+
+  .cart-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--ion-color-secondary-tint);
+    border-radius: 50%;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 15px rgba(var(--ion-color-secondary-rgb), 0.2);
+    transform: translateY(-8px);
+    
+    ion-icon {
+      color: #ffffff !important;
+      font-size: 24px;
+    }
+  }
+
+  &.tab-selected .cart-circle {
+    transform: translateY(-8px) scale(1.1);
+    transition: transform 0.2s ease-in-out;
+    background: var(--ion-color-primary-tint);
+  }
+}
