@@ -86,7 +86,7 @@ export class HomePage implements OnInit {
     },
     {
       category_id: 4,
-      name: "Gaming Chairs",
+      name: "Chairs",
       icon_img: "./assets/icon/gaming-chair.svg"
     },
     {
