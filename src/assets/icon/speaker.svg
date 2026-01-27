@@ -1,0 +1,24 @@
+<svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="speakerBody" x1="5" y1="2" x2="19" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1e3c72" />
+      <stop offset="100%" stop-color="#2a5298" />
+    </linearGradient>
+    <linearGradient id="speakerDetail" x1="12" y1="6" x2="12" y2="18" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00d2ff" />
+      <stop offset="100%" stop-color="#3a7bd5" />
+    </linearGradient>
+  </defs>
+
+  <rect x="5" y="2" width="14" height="20" rx="2" fill="url(#speakerBody)" stroke="#111" stroke-width="0.5"/>
+
+  <circle cx="12" cy="7" r="2.5" fill="url(#speakerDetail)" />
+  <circle cx="12" cy="7" r="1" fill="white" fill-opacity="0.4" />
+
+  <circle cx="12" cy="15" r="4.5" fill="url(#speakerDetail)" />
+  <circle cx="12" cy="15" r="3" stroke="white" stroke-width="0.5" stroke-opacity="0.3" />
+  <circle cx="12" cy="15" r="1.5" fill="white" fill-opacity="0.5" />
+
+  <rect x="8" y="20" width="2" height="0.5" rx="0.25" fill="white" fill-opacity="0.6" />
+  <rect x="14" y="20" width="2" height="0.5" rx="0.25" fill="white" fill-opacity="0.6" />
+</svg>

@@ -1,41 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap");
+
+ion-header {
+  // Ensure the header doesn't have a background that clashes with the toolbar
+  --background: transparent;
+  background: white; // Or your preferred color
+
+  ion-toolbar {
+    /* Normalizing height and padding */
+    --padding-top: 0;
+    --padding-bottom: 0;
+    --padding-start: 8px;
+    --padding-end: 8px;
+    --min-height: 56px; // Standard height to prevent jumping
+
+    /* Force background color */
+    --background: white;
+
+    /* Beautiful bottom border for structure */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+}
+
 ion-title {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.5px;
-  b {
-    color: var(--ion-color-primary);
+  
+  .brand-container {
+    font-family: "Outfit", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 1.4rem; // Slightly larger
+    letter-spacing: -0.5px; // Tightening letter spacing makes it look more "logo-like"
+  }
+
+  .brand-main {
+    font-weight: 400;
+    color: #2d3436;
+  }
+
+  .brand-alt {
+    font-weight: 800;
+    // Cool Blue to Indigo Gradient
+    background: linear-gradient(135deg, #3880ff 0%, #6a11cb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1px;
+  }
+
+  .brand-dot {
+    color: #3880ff;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 0;
   }
 }
 
 ion-avatar {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #f0f0f0; // Add a ring to make it pop
 }
-
 // Hero Banner
 .hero-swiper {
   padding: 0;
-  margin-bottom: 24px;
+  margin-bottom: 10px;
+  border-radius: 18px;
+  position: relative;
 
   // Styling the pagination dots
-  --swiper-pagination-color: #ffffff;
-  --swiper-pagination-bullet-inactive-color: rgba(255, 255, 255, 0.4);
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-color: var(--ion-color-primary);
+  --swiper-pagination-bullet-inactive-color: rgba(
+    var(--ion-color-primary-rgb),
+    0.4
+  );
   --swiper-pagination-bullet-inactive-opacity: 1;
   --swiper-pagination-bullet-size: 8px;
-  --swiper-pagination-bullet-horizontal-gap: 6px;
+  --swiper-pagination-bullet-horizontal-gap: 4px;
 
   ::ng-deep {
+    .swiper-pagination {
+      bottom: 0 !important; // Align pagination container to the bottom padding
+    }
+
+    .swiper-pagination-bullet {
+      transition: all 0.3s ease; // Smooth transition for the width change
+      height: 8px; // Ensure height stays consistent
+    }
+
     .swiper-pagination-bullet-active {
-      width: 22px !important; // Makes it a pill shape
-      border-radius: 12px !important;
-      transition: all 0.3s ease;
+      width: 24px !important; // Your rectangle width
+      border-radius: 4px !important; // Makes it a rounded rectangle/pill
+    }
+  }
+
+  swiper-slide {
+    padding-bottom: 20px !important; // Space for pagination
+  }
+
+  .hero-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+
+    .hero-image-wrapper {
+      line-height: 0; // Removes tiny gaps at the bottom of images
+      img {
+        width: 100%;
+        display: block;
+        border-radius: 18px;
+      }
+    }
+
+    .hero-text {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 2;
+
+      // Gradient: Dark at bottom, transparent at top
+      background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.9) 0%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      padding: 40px 20px 20px; // Extra top padding to stretch the gradient
+
+      h3 {
+        padding: 0;
+        margin: 0;
+        font-weight: 600;
+        color: #fff; // Ensure text is white to contrast the dark gradient
+      }
     }
   }
 }
-
-.hero-card {
-  /* Keep your previous background, height, and border-radius styles */
-  display: block;
-  width: 100%;
+.hero-swiper::part(bullet-active) {
+  width: 16px;
+  height: 8px;
+  border-radius: 4px;
 }
 
 // Categories
@@ -43,7 +150,7 @@ ion-avatar {
   display: flex;
   gap: 12px;
   overflow-x: auto;
-  padding-bottom: 20px;
+  padding: 8px 8px 10px;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -54,17 +161,38 @@ ion-avatar {
     border-radius: 12px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     min-width: fit-content;
     color: #666;
-    ion-icon {
-      font-size: 1.2rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    .cat-icon {
+      width: 24px;
+      height: 24px;
     }
+
     &.active {
-      background: #3880ff;
-      color: white;
-      box-shadow: 0 8px 15px rgba(56, 128, 255, 0.2);
+      // border: 0.5px solid var(--ion-color-primary);
+      box-shadow: 0 2px 12px rgba(56, 128, 255, 0.1);
+      background: white;
     }
+  }
+}
+
+.category-detail {
+  padding: 20px;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

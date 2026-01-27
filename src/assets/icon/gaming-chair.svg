@@ -1,0 +1,29 @@
+<svg width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="chairGradient" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8E2DE2" />
+      <stop offset="100%" stop-color="#4A00E0" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF0080" />
+      <stop offset="100%" stop-color="#7928CA" />
+    </linearGradient>
+  </defs>
+
+  <path d="M7 3C7 2.44772 7.44772 2 8 2H16C16.5523 2 17 2.44772 17 3V14H7V3Z" fill="url(#chairGradient)"/>
+  <path d="M7 6L5 8V12L7 13V6Z" fill="url(#chairGradient)" opacity="0.8"/>
+  <path d="M17 6L19 8V12L17 13V6Z" fill="url(#chairGradient)" opacity="0.8"/>
+  
+  <rect x="9" y="4" width="6" height="2" rx="1" fill="white" fill-opacity="0.3"/>
+
+  <rect x="5" y="14" width="14" height="3" rx="1.5" fill="url(#accentGradient)"/>
+
+  <path d="M4 11H5V14H4V11Z" fill="#4A00E0"/>
+  <path d="M19 11H20V14H19V11Z" fill="#4A00E0"/>
+
+  <path d="M11 17H13V19H11V17Z" fill="#2D3436"/>
+  <path d="M12 19L8 21M12 19L16 21M12 19V22" stroke="#2D3436" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="8" cy="21" r="1" fill="#2D3436"/>
+  <circle cx="16" cy="21" r="1" fill="#2D3436"/>
+  <circle cx="12" cy="22" r="1" fill="#2D3436"/>
+</svg>

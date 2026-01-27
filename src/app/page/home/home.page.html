@@ -1,11 +1,18 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar>
+  <ion-toolbar mode="md">
     <ion-avatar slot="start" class="ion-margin-start">
       <img src="https://i.pravatar.cc/150?u=user" />
     </ion-avatar>
-    <ion-title class="ion-text-center"><b>Gadget</b>Pro</ion-title>
+
+    <ion-title>
+      <div class="brand-container">
+        <span class="brand-main">Gadget</span><span class="brand-alt">Pro</span
+        ><span class="brand-dot">.</span>
+      </div>
+    </ion-title>
+
     <ion-buttons slot="end">
-      <ion-button color="medium">
+      <ion-button fill="clear" color="dark">
         <ion-icon slot="icon-only" name="search-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -19,43 +26,35 @@
     autoplay-delay="3000"
     class="hero-swiper"
   >
-    <swiper-slide>
-      <div class="hero-card">
-        <div class="hero-text">
-          <h3>Collection of 2026</h3>
-        </div>
-        <div class="hero-image-wrapper">
-          <img src="https://slimbook.com/web/image/62731/HERO_Pantallas_Inteligencia%20Artificial-4-venus_B3.png" />
-        </div>
-      </div>
-    </swiper-slide>
-
-    <swiper-slide>
+    <swiper-slide *ngFor="let b of bannerHero">
       <div class="hero-card alternate-color">
         <div class="hero-text">
-          <h3>Exclusive Razer Deals</h3>
+          <h3>{{ b.title }}</h3>
         </div>
         <div class="hero-image-wrapper">
-          <img src="https://assets2.razerzone.com/images/pnx.assets/8430adae71b21392fc11b689abe2b517/razer-fotl-hero-1920x700.webp" />
+          <img src="{{ b.image }}" />
         </div>
       </div>
     </swiper-slide>
   </swiper-container>
 
   <div class="category-row">
-    <div class="cat-item active">
-      <ion-icon name="laptop-outline"></ion-icon>
-      <span>Laptop</span>
-    </div>
-    <div class="cat-item">
-      <ion-icon name="desktop-outline"></ion-icon>
-      <span>Desktop</span>
-    </div>
-    <div class="cat-item">
-      <ion-icon name="headset-outline"></ion-icon>
-      <span>Gadgets</span>
+    <div
+      *ngFor="let cat of categories"
+      class="cat-item"
+      [class.active]="selectedCategory === cat.category_id"
+      (click)="selectCategory(cat.category_id)"
+    >
+      <img [src]="cat.icon_img" class="cat-icon" alt="icon" />
+
+      <span>{{ cat.name }}</span>
     </div>
   </div>
+
+  <!-- <div class="category-detail" *ngIf="selectedCategory">
+    <h3>{{ selectedCategory }}</h3>
+    <p>{{ categories.find(c => c.name === selectedCategory)?.desc }}</p>
+  </div> -->
 
   <div class="section-header">
     <h2>Popular Product</h2>
