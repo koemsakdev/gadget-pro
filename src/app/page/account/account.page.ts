@@ -1,20 +1,55 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+import {
+  IonContent,
+  IonAvatar,
+  IonButton,
+  IonIcon,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonListHeader,
+} from '@ionic/angular/standalone';
+import { addIcons } from 'ionicons';
+import {
+  settingsOutline,
+  personOutline,
+  heartOutline,
+  receiptOutline,
+  helpCircleOutline,
+  shieldCheckmarkOutline,
+  logOutOutline,
+  cameraReverse,
+} from 'ionicons/icons';
 
 @Component({
   selector: 'app-account',
   templateUrl: './account.page.html',
   styleUrls: ['./account.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule]
+  imports: [
+    CommonModule,
+    IonContent,
+    IonAvatar,
+    IonButton,
+    IonIcon,
+    IonList,
+    IonItem,
+    IonLabel,
+    IonListHeader,
+  ],
 })
-export class AccountPage implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+export class AccountPage {
+  constructor() {
+    addIcons({
+      settingsOutline,
+      personOutline,
+      heartOutline,
+      receiptOutline,
+      helpCircleOutline,
+      shieldCheckmarkOutline,
+      logOutOutline,
+      cameraReverse,
+    });
   }
-
 }

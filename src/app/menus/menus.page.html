@@ -28,7 +28,12 @@
     </ion-tab-button>
 
     <ion-tab-button tab="notifications" href="/notifications">
-      <ion-icon name="notifications-outline"></ion-icon>
+      <div class="icon-wrapper">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-badge color="danger" *ngIf="unreadCount > 0">
+          {{ unreadCount }}
+        </ion-badge>
+      </div>
     </ion-tab-button>
 
     <ion-tab-button tab="account" href="/account">

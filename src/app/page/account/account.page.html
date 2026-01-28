@@ -1,13 +1,70 @@
-<ion-header [translucent]="true">
+<!-- <ion-header [translucent]="true" class="ion-no-border">
   <ion-toolbar>
-    <ion-title>account</ion-title>
+    <ion-title>My Profile</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="primary">
+        <ion-icon name="settings-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">account</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="profile-header ion-padding ion-text-center">
+    <div class="avatar-container">
+      <ion-avatar>
+        <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dXNlciUyMHByb2ZpbGV8ZW58MHx8MHx8fDA%3D" alt="Profile" />
+      </ion-avatar>
+      <ion-button fill="clear" class="edit-btn">
+        <ion-icon name="camera-reverse" slot="icon-only"></ion-icon>
+      </ion-button>
+    </div>
+    <h2>Koemsak Mean</h2>
+    <p>koemsak.mean@gmail.com</p>
+  </div>
+
+  <div class="settings-container ion-padding">
+    <ion-list-header>
+      <ion-label>Account Settings</ion-label>
+    </ion-list-header>
+
+    <ion-list inset="true" mode="ios">
+      <ion-item button detail="true">
+        <ion-icon name="person-outline" slot="start" color="primary"></ion-icon>
+        <ion-label>Personal Information</ion-label>
+      </ion-item>
+      
+      <ion-item button detail="true" routerLink="/tabs/home/favorite">
+        <ion-icon name="heart-outline" slot="start" color="danger"></ion-icon>
+        <ion-label>Wishlist</ion-label>
+      </ion-item>
+
+      <ion-item button detail="true">
+        <ion-icon name="receipt-outline" slot="start" color="tertiary"></ion-icon>
+        <ion-label>Order History</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-list-header>
+      <ion-label>Support & Legal</ion-label>
+    </ion-list-header>
+
+    <ion-list inset="true" mode="ios">
+      <ion-item button detail="true">
+        <ion-icon name="help-circle-outline" slot="start" color="secondary"></ion-icon>
+        <ion-label>Help Center</ion-label>
+      </ion-item>
+      <ion-item button detail="true">
+        <ion-icon name="shield-checkmark-outline" slot="start" color="success"></ion-icon>
+        <ion-label>Privacy Policy</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" fill="clear" color="danger" class="logout-btn ion-margin-top">
+      <ion-icon name="log-out-outline" slot="start"></ion-icon>
+      Log Out
+    </ion-button>
+  </div>
+  
+  <div style="height: 80px;"></div>
 </ion-content>

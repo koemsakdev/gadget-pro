@@ -3,9 +3,9 @@ ion-tab-bar {
   --background: transparent;
   height: 70px;
   position: relative;
-  
+
   /* Allow the bar itself to overflow */
-  contain: none; 
+  contain: none;
   overflow: visible;
 
   /* Target the internal container to stop clipping */
@@ -37,12 +37,11 @@ ion-tab-button {
   --color: #a2a2a2;
   --color-selected: var(--ion-color-primary);
   transition: all 0.3s ease-in-out;
-  
+
   ion-icon {
     font-size: 26px;
   }
 }
-
 
 .prominent-cart {
   --ripple-color: transparent;
@@ -59,7 +58,7 @@ ion-tab-button {
     border: 5px solid #ffffff;
     box-shadow: 0 4px 15px rgba(var(--ion-color-secondary-rgb), 0.2);
     transform: translateY(-8px);
-    
+
     ion-icon {
       color: #ffffff !important;
       font-size: 24px;
@@ -70,5 +69,47 @@ ion-tab-button {
     transform: translateY(-8px) scale(1.1);
     transition: transform 0.2s ease-in-out;
     background: var(--ion-color-primary-tint);
+  }
+}
+
+/* Wrapper to hold icon and badge together */
+.icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ion-badge {
+    position: absolute;
+    top: -5px;
+    right: -8px;
+
+    /* 1. Force centering logic */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* 2. Fix dimensions for a perfect circle */
+    min-width: 18px;
+    height: 18px;
+    padding: 0; /* Remove default padding that pushes text */
+
+    /* 3. Typography tweaks */
+    font-size: 10px;
+    font-weight: bold;
+    text-align: center;
+
+    /* 4. Visuals */
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+  }
+}
+
+/* Ensure the notification tab button doesn't clip the badge */
+ion-tab-button[tab="notifications"] {
+  overflow: visible;
+
+  &::part(native) {
+    overflow: visible;
   }
 }

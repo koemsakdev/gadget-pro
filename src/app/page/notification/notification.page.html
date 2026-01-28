@@ -1,13 +1,57 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>notification</ion-title>
+  <ion-toolbar mode="md">
+    <ion-title>Notifications</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="onMarkAllRead()" color="primary">Mark all as read</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">notification</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  @if (groupedNotifications.length === 0) {
+    <div class="empty-state ion-text-center ion-padding">
+      <ion-icon name="notifications-off-outline"></ion-icon>
+      <h3>All caught up!</h3>
+    </div>
+  } @else {
+    <ion-list>
+      @for (group of groupedNotifications; track group.date) {
+        <ion-item-group>
+          <ion-item-divider sticky="true">
+            <ion-label>{{ group.date }}</ion-label>
+          </ion-item-divider>
+
+          @for (note of group.items; track note.id) {
+            <ion-item-sliding>
+              <ion-item [class.unread]="!note.read" (click)="onMarkRead(note)" lines="full" detail="false">
+                <div slot="start" class="icon-circle" [ngClass]="note.type">
+                  <ion-icon [name]="getIcon(note.type)"></ion-icon>
+                </div>
+
+                <ion-label>
+                  <div class="note-header">
+                    <h3>{{ note.title }}</h3>
+                    <span class="time">{{ note.time }}</span>
+                  </div>
+                  <p class="ion-text-wrap">{{ note.message }}</p>
+                </ion-label>
+                
+                @if (!note.read) {
+                  <div slot="end" class="unread-dot"></div>
+                }
+              </ion-item>
+
+              <ion-item-options side="end">
+                <ion-item-option color="danger" (click)="onDelete(note)">
+                  <ion-icon name="trash" slot="icon-only"></ion-icon>
+                </ion-item-option>
+              </ion-item-options>
+            </ion-item-sliding>
+          }
+        </ion-item-group>
+      }
+    </ion-list>
+  }
+
+  <div style="height: 30px;"></div>
 </ion-content>

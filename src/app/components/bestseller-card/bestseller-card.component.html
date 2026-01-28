@@ -1,21 +1,30 @@
 <div class="best-selling-card">
   <div class="img-box">
-    <div class="top-seller-badge">#1</div>
+    <div class="top-seller-badge">#{{ rank }}</div>
     <img [src]="'./assets/product-imgs/' + item.image" alt="product" />
   </div>
 
   <div class="item-info">
     <div class="text-group">
-      <h4>{{item.name}}</h4>
+      <h4>{{ item.name }}</h4>
       <div class="rating-row">
-        <ion-icon name="star" color="warning" *ngFor="let s of [1,2,3,4,5]"></ion-icon>
-        <span class="rating-val">5.0</span>
+        <ion-icon
+          *ngFor="let s of [1, 2, 3, 4, 5]"
+          [name]="getStarName(s)"
+          color="warning"
+        ></ion-icon>
+        <span class="rating-val">{{ item.metrics.rating }}</span>
       </div>
     </div>
 
     <div class="action-row">
-      <span class="price-text">${{item.price}}</span>
-      <ion-button (click)="onOrder()" size="small" shape="round" class="order-btn">
+      <span class="price-text">${{ item.price }}</span>
+      <ion-button
+        (click)="onOrder()"
+        size="small"
+        shape="round"
+        class="order-btn"
+      >
         Order
       </ion-button>
     </div>

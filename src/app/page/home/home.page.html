@@ -53,7 +53,7 @@
 
   <div class="section-header">
     <h2>Popular Products</h2>
-    <ion-button fill="clear" routerLink="/products/popular">
+    <ion-button fill="clear" routerLink="/tabs/home/popular-products">
       View All
       <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
     </ion-button>
@@ -72,17 +72,19 @@
 
   <div class="section-header">
     <h2>Best Sellers</h2>
-    <ion-button fill="clear" routerLink="/products/best-seller">
+    <ion-button fill="clear" routerLink="/tabs/home/best-seller">
       View All
       <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
     </ion-button>
   </div>
 
   <div class="best-sellers-list">
-    <app-best-seller-item 
-      *ngFor="let p of bestSellers" 
+    <app-bestseller-card
+      *ngFor="let p of bestSellers; let i = index"
       [item]="p"
-      (order)="handleOrder($event)">
-    </app-best-seller-item>
+      [rank]="i + 1"
+      (order)="handleOrder($event)"
+    >
+    </app-bestseller-card>
   </div>
 </ion-content>

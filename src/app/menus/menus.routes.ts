@@ -8,8 +8,25 @@ export const routes: Routes = [
     children: [
       {
         path: 'home',
-        loadComponent: () =>
-          import('../page/home/home.page').then((m) => m.HomePage),
+        children: [
+          {
+            path: '', // This loads when you go to /tabs/home
+            loadComponent: () =>
+              import('../page/home/home.page').then((m) => m.HomePage),
+          },
+          {
+            path: 'popular-products',
+            loadComponent: () =>
+              import('../page/popular/popular.page').then((m) => m.PopularPage),
+          },
+          {
+            path: 'best-seller', // This is now /tabs/home/best-seller
+            loadComponent: () =>
+              import('../page/best-seller/best-seller.page').then(
+                (m) => m.BestSellerPage,
+              ),
+          },
+        ],
       },
       {
         path: 'favorite',
@@ -24,7 +41,9 @@ export const routes: Routes = [
       {
         path: 'notifications',
         loadComponent: () =>
-          import('../page/notification/notification.page').then((m) => m.NotificationPage),
+          import('../page/notification/notification.page').then(
+            (m) => m.NotificationPage,
+          ),
       },
       {
         path: 'account',

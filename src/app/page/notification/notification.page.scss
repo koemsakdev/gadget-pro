@@ -1,0 +1,109 @@
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  color: var(--ion-color-medium);
+
+  ion-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+  }
+}
+
+.unread {
+  --background: rgba(var(--ion-color-primary-rgb), 0.04);
+  h3 { font-weight: 700 !important; }
+}
+
+.unread-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--ion-color-primary);
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+
+  &.order { background: #e8f5e9; color: #4caf50; }
+  &.promo { background: #fff3e0; color: #ff9800; }
+  &.system { background: #e3f2fd; color: #2196f3; }
+}
+
+.note-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+
+  h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: var(--ion-color-dark);
+  }
+
+  .time {
+    font-size: 0.8rem;
+    color: var(--ion-color-medium);
+  }
+}
+
+ion-item-divider {
+  --background: #f9f9f9;
+  --padding-top: 12px;
+  --padding-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  border-bottom: 0.5px solid #eee;
+}
+
+.mark-read-btn {
+  font-weight: 600;
+  --padding-end: 10px;
+}
+
+ion-title {
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+
+  .brand-container {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 1.2rem; // Slightly larger
+    letter-spacing: -0.5px; // Tightening letter spacing makes it look more "logo-like"
+  }
+
+  .brand-main {
+    font-weight: 400;
+    color: #2d3436;
+  }
+
+  .brand-alt {
+    font-weight: 800;
+    // Cool Blue to Indigo Gradient
+    background: linear-gradient(135deg, #3880ff 0%, #6a11cb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-left: 1px;
+  }
+
+  .brand-dot {
+    color: #3880ff;
+    font-weight: 900;
+    font-size: 1.6rem;
+    line-height: 0;
+  }
+}
