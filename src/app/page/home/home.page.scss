@@ -24,7 +24,7 @@ ion-header {
 ion-title {
   font-size: 1.1rem;
   letter-spacing: 0.5px;
-  
+
   .brand-container {
     font-family: "Outfit", sans-serif;
     display: flex;
@@ -61,6 +61,7 @@ ion-avatar {
   height: 38px;
   border: 2px solid #f0f0f0; // Add a ring to make it pop
 }
+
 // Hero Banner
 .hero-swiper {
   padding: 0;
@@ -264,11 +265,10 @@ ion-avatar {
   padding: 12px;
   gap: 15px;
   margin-bottom: 12px;
-  //   box-shadow: 0 5px 15px rgba(0,0,0,0.02);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.02);
 
   img {
-    width: 70px;
-    height: 70px;
+    width: 30%;
     object-fit: contain;
   }
   .item-details {
@@ -289,6 +289,35 @@ ion-avatar {
       span {
         font-weight: 700;
       }
+    }
+  }
+}
+
+// Section Headers
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px 8px 16px; // Top, Right, Bottom, Left
+  background: transparent;
+
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ion-color-dark);
+    letter-spacing: -0.5px;
+  }
+
+  ion-button {
+    --padding-end: 0; // Aligns button text to the far right
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: none; // Keeps it "View All" instead of "VIEW ALL"
+
+    ion-icon {
+      font-size: 0.9rem;
+      margin-left: 2px;
     }
   }
 }

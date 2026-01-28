@@ -42,8 +42,8 @@
     <div
       *ngFor="let cat of categories"
       class="cat-item"
-      [class.active]="selectedCategory === cat.category_id"
-      (click)="selectCategory(cat.category_id)"
+      [class.active]="selectedCategory === cat.name"
+      (click)="selectCategory(cat.name)"
     >
       <img [src]="cat.icon_img" class="cat-icon" alt="icon" />
 
@@ -51,23 +51,22 @@
     </div>
   </div>
 
-  <!-- <div class="category-detail" *ngIf="selectedCategory">
-    <h3>{{ selectedCategory }}</h3>
-    <p>{{ categories.find(c => c.name === selectedCategory)?.desc }}</p>
-  </div> -->
-
   <div class="section-header">
-    <h2>Popular Product</h2>
+    <h2>Best Sellers</h2>
+    <ion-button fill="clear" routerLink="/products/best-seller">
+      View All
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-button>
   </div>
 
   <ion-row>
     <ion-col size="6" *ngFor="let p of popularProducts">
       <div class="product-card">
         <div class="discount-badge" *ngIf="p.discount">-{{p.discount}}%</div>
-        <img [src]="p.image" />
+        <img src="./assets/product-imgs/{{p.image}}" />
         <div class="p-info">
           <h4>{{p.name}}</h4>
-          <p>{{p.brand}}</p>
+          <p>{{p.description}}</p>
           <div class="price-row">
             <span>${{p.price}}</span>
             <div class="add-btn"><ion-icon name="add"></ion-icon></div>
@@ -77,13 +76,25 @@
     </ion-col>
   </ion-row>
 
+
+
   <div class="section-header">
-    <h2>Best Selling</h2>
-    <small>1/10</small>
+    <h2>Best Sellers</h2>
+    <ion-button fill="clear" routerLink="/products/best-seller">
+      View All
+      <ion-icon name="chevron-forward-outline" slot="end"></ion-icon>
+    </ion-button>
   </div>
 
-  <div class="best-selling-item" *ngFor="let item of bestSelling">
-    <img [src]="item.image" />
+  
+
+  <!-- <div class="section-header">
+    <h2>Best Selling</h2>
+    <small>1/10</small>
+  </div> -->
+
+  <div class="best-selling-item" *ngFor="let item of bestSellers">
+    <img src="./assets/product-imgs/{{item.image}}" />
     <div class="item-details">
       <h4>{{item.name}}</h4>
       <div class="rating">

@@ -1,311 +1,522 @@
 [
-    {
-        "id": 1,
-        "name": "New Razer Blade 14 with GeForce RTX 5060, 16 GB RAM and 1 TB SSD",
-        "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
-        "price": 2299.99,
-        "image": "razer_blade_14.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 2,
-        "name": "New Razer Blade 14 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD",
-        "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
-        "price": 2699.99,
-        "image": "razer_blade_14.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 3,
-        "name": "New Razer Blade 14 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD in Mercury",
-        "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
-        "price": 2699.99,
-        "image": "razer_blade_14_mercy.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 4,
-        "name": "New Razer Blade 14 with GeForce RTX 5070, 64 GB RAM and 2 TB SSD",
-        "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
-        "price": 2999.99,
-        "image": "razer_blade_14.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 5,
-        "name": "New Razer Blade 16 with GeForce RTX 5060, 16 GB RAM and 1 TB SSD",
-        "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
-        "price": 2399.99,
-        "image": "razer_blade_16.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 6,
-        "name": "New Razer Blade 16 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD",
-        "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
-        "price": 2799.99,
-        "image": "razer_blade_16.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 7,
-        "name": "New Razer Blade 16 with GeForce RTX 5080, 32 GB RAM and 1 TB SSD",
-        "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
-        "price": 3499.99,
-        "image": "razer_blade_16.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 8,
-        "name": "New Razer Blade 18 with GeForce RTX 5070 Ti, 32 GB RAM and 1 TB SSD",
-        "description": "Most powerful 18-inch gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
-        "price": 3499.99,
-        "image": "razer_blade_18.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 9,
-        "name": "New Razer Blade 18 with GeForce RTX 5080, 32 GB RAM and 1 TB SSD",
-        "description": "Most powerful 18-inch gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
-        "price": 4099.99,
-        "image": "razer_blade_18.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 10,
-        "name": "New Razer Blade 18 with GeForce RTX 5090, 32 GB RAM and 2 TB SSD",
-        "description": "14-Inch Intel laptop designed for productivity with Intel Evo platform",
-        "price": 4899.99,
-        "image": "razer_book_18.png",
-        "category": "Laptops",
-        "discount": 0
-    },
-    {
-        "id": 11,
-        "name": "New Razer Blade 18 with GeForce RTX 5090, 64 GB RAM and 4 TB (2 TB + 2 TB) SSD",
-        "description": "14-Inch Intel laptop designed for productivity with Intel Evo platform",
-        "price": 5199.99,
-        "image": "razer_book_18.png",
-        "category": "Laptops",
-        "discount": 0
-    },
+  {
+    "id": 1,
+    "name": "New Razer Blade 14 with GeForce RTX 5060, 16 GB RAM and 1 TB SSD",
+    "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
+    "price": 2299.99,
+    "image": "razer_blade_14.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 320, "views": 5400, "rating": 4.4, "reviewCount": 68 },
+    "tags": []
+  },
+  {
+    "id": 2,
+    "name": "New Razer Blade 14 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD",
+    "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
+    "price": 2699.99,
+    "image": "razer_blade_14.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 980, "views": 11200, "rating": 4.8, "reviewCount": 214 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 3,
+    "name": "New Razer Blade 14 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD in Mercury",
+    "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
+    "price": 2699.99,
+    "image": "razer_blade_14_mercy.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 610, "views": 8900, "rating": 4.6, "reviewCount": 132 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 4,
+    "name": "New Razer Blade 14 with GeForce RTX 5070, 64 GB RAM and 2 TB SSD",
+    "description": "Ultra-portable 14-Inch AMD gaming laptop with NVIDIA RTX 50 Series graphics",
+    "price": 2999.99,
+    "image": "razer_blade_14.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 420, "views": 7600, "rating": 4.5, "reviewCount": 97 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 5,
+    "name": "New Razer Blade 16 with GeForce RTX 5060, 16 GB RAM and 1 TB SSD",
+    "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
+    "price": 2399.99,
+    "image": "razer_blade_16.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 290, "views": 5100, "rating": 4.3, "reviewCount": 61 },
+    "tags": []
+  },
+  {
+    "id": 6,
+    "name": "New Razer Blade 16 with GeForce RTX 5070, 32 GB RAM and 1 TB SSD",
+    "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
+    "price": 2799.99,
+    "image": "razer_blade_16.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 1100, "views": 13400, "rating": 4.9, "reviewCount": 268 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 7,
+    "name": "New Razer Blade 16 with GeForce RTX 5080, 32 GB RAM and 1 TB SSD",
+    "description": "Ultra-thin 16-inch AMD gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
+    "price": 3499.99,
+    "image": "razer_blade_16.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 380, "views": 9200, "rating": 4.6, "reviewCount": 88 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 8,
+    "name": "New Razer Blade 18 with GeForce RTX 5070 Ti, 32 GB RAM and 1 TB SSD",
+    "description": "Most powerful 18-inch gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
+    "price": 3499.99,
+    "image": "razer_blade_18.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 260, "views": 8700, "rating": 4.5, "reviewCount": 59 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 9,
+    "name": "New Razer Blade 18 with GeForce RTX 5080, 32 GB RAM and 1 TB SSD",
+    "description": "Most powerful 18-inch gaming laptop with NVIDIA GeForce RTX 50 Series graphics",
+    "price": 4099.99,
+    "image": "razer_blade_18.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 190, "views": 8200, "rating": 4.6, "reviewCount": 41 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 10,
+    "name": "New Razer Blade 18 with GeForce RTX 5090, 32 GB RAM and 2 TB SSD",
+    "description": "14-Inch Intel laptop designed for productivity with Intel Evo platform",
+    "price": 4899.99,
+    "image": "razer_book_18.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 120, "views": 6900, "rating": 4.7, "reviewCount": 29 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 11,
+    "name": "New Razer Blade 18 with GeForce RTX 5090, 64 GB RAM and 4 TB (2 TB + 2 TB) SSD",
+    "description": "14-Inch Intel laptop designed for productivity with Intel Evo platform",
+    "price": 5199.99,
+    "image": "razer_book_18.png",
+    "category": "Laptops",
+    "discount": 0,
+    "metrics": { "sold": 80, "views": 6100, "rating": 4.8, "reviewCount": 21 },
+    "tags": ["POPULAR"]
+  },
 
-    {
-        "id": 12,
-        "name": "Razer Blackshark V3 Pro for Xbox - Black",
-        "description": "Wireless ANC Esports Headset",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_black.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 13,
-        "name": "Razer Blackshark V3 Pro for Xbox - White",
-        "description": "Wireless ANC Esports Headset",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_white.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 14,
-        "name": "Razer BlackShark V3 Pro for Xbox - Esports Green Edition",
-        "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
-        "price": 259.99,
-        "image": "razer_blackshark_v3_pro_green.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 15,
-        "name": "Razer BlackShark V3 Pro for Xbox - 2XKO Edition",
-        "description": "Wireless ANC Esports Headset",
-        "price": 269.99,
-        "image": "razer_blackshark_v3_pro_edition.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 16,
-        "name": "Razer BlackShark V3 Pro for PlayStation - Black",
-        "description": "Wireless ANC Esports Headset",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_playstation_black.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 17,
-        "name": "Razer BlackShark V3 Pro for PlayStation - White",
-        "description": "Wireless ANC Esports Headset",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_playstation_white.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 18,
-        "name": "Razer BlackShark V3 Pro - Counter-Strike 2 Edition",
-        "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
-        "price": 259.99,
-        "image": "razer_blackshark_v3_pro_cs2.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 19,
-        "name": "Razer BlackShark V3 Pro - Black",
-        "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_black.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 20,
-        "name": "Razer BlackShark V3 Pro - White",
-        "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
-        "price": 249.99,
-        "image": "razer_blackshark_v3_pro_white.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 21,
-        "name": "Razer BlackShark V3 Pro - Esports Green Edition",
-        "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
-        "price": 259.99,
-        "image": "razer_blackshark_v3_pro_green.png",
-        "category": "Headsets",
-        "discount": 0
-    },
-    {
-        "id": 22,
-        "name": "Razer Kraken V4 X - Cinnamoroll Edition",
-        "description": "Wired Gaming Headset",
-        "price": 109.99,
-        "image": "razer_kraken_v4_x_cinnamoroll.png",
-        "category": "Headsets",
-        "discount": 0
-    },
+  {
+    "id": 12,
+    "name": "Razer Blackshark V3 Pro for Xbox - Black",
+    "description": "Wireless ANC Esports Headset",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_black.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 2400, "views": 19800, "rating": 4.8, "reviewCount": 640 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 13,
+    "name": "Razer Blackshark V3 Pro for Xbox - White",
+    "description": "Wireless ANC Esports Headset",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_white.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 1100, "views": 14200, "rating": 4.6, "reviewCount": 310 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 14,
+    "name": "Razer BlackShark V3 Pro for Xbox - Esports Green Edition",
+    "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
+    "price": 259.99,
+    "image": "razer_blackshark_v3_pro_green.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 780, "views": 12400, "rating": 4.5, "reviewCount": 205 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 15,
+    "name": "Razer BlackShark V3 Pro for Xbox - 2XKO Edition",
+    "description": "Wireless ANC Esports Headset",
+    "price": 269.99,
+    "image": "razer_blackshark_v3_pro_edition.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 520, "views": 9800, "rating": 4.4, "reviewCount": 141 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 16,
+    "name": "Razer BlackShark V3 Pro for PlayStation - Black",
+    "description": "Wireless ANC Esports Headset",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_playstation_black.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 690, "views": 10100, "rating": 4.5, "reviewCount": 176 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 17,
+    "name": "Razer BlackShark V3 Pro for PlayStation - White",
+    "description": "Wireless ANC Esports Headset",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_playstation_white.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 610, "views": 9600, "rating": 4.4, "reviewCount": 158 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 18,
+    "name": "Razer BlackShark V3 Pro - Counter-Strike 2 Edition",
+    "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
+    "price": 259.99,
+    "image": "razer_blackshark_v3_pro_cs2.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 840, "views": 13000, "rating": 4.6, "reviewCount": 233 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 19,
+    "name": "Razer BlackShark V3 Pro - Black",
+    "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_black.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 3100, "views": 22400, "rating": 4.9, "reviewCount": 910 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 20,
+    "name": "Razer BlackShark V3 Pro - White",
+    "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
+    "price": 249.99,
+    "image": "razer_blackshark_v3_pro_white.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 980, "views": 13800, "rating": 4.6, "reviewCount": 287 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 21,
+    "name": "Razer BlackShark V3 Pro - Esports Green Edition",
+    "description": "Wireless ANC Esports Gaming Headset with Ultra-Low Latency and THX Spatial Audio",
+    "price": 259.99,
+    "image": "razer_blackshark_v3_pro_green.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 740, "views": 12000, "rating": 4.5, "reviewCount": 210 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 22,
+    "name": "Razer Kraken V4 X - Cinnamoroll Edition",
+    "description": "Wired Gaming Headset",
+    "price": 109.99,
+    "image": "razer_kraken_v4_x_cinnamoroll.png",
+    "category": "Headsets",
+    "discount": 0,
+    "metrics": { "sold": 560, "views": 8800, "rating": 4.4, "reviewCount": 190 },
+    "tags": ["POPULAR"]
+  },
 
-    {
-        "id": 23,
-        "name": "Razer Iskur V2 NewGen - Black / Green",
-        "description": "Ergonomic Gaming Chair with Breathable Comfort",
-        "price": 649.99,
-        "image": "razer_iskur_v2_newgen_black_green.png",
-        "category": "Chairs",
-        "discount": 0
-    },
-    {
-        "id": 24,
-        "name": "Razer Iskur V2 NewGen - Black",
-        "description": "Ergonomic Gaming Chair with Breathable Comfort",
-        "price": 649.99,
-        "image": "razer_iskur_v2_newgen_black.png",
-        "category": "Chairs",
-        "discount": 0
-    },
-    {
-        "id": 25,
-        "name": "Razer Iskur V2 NewGen - Quartz",
-        "description": "Ergonomic Gaming Chair with Breathable Comfort",
-        "price": 699.99,
-        "image": "razer_iskur_v2_newgen_quartz.png",
-        "category": "Chairs",
-        "discount": 0
-    },
-    {
-        "id": 26,
-        "name": "Razer Iskur V2 NewGen - Light Gray",
-        "description": "Ergonomic Gaming Chair with Breathable Comfort",
-        "price": 699.99,
-        "image": "razer_iskur_v2_newgen_light_gray.png",
-        "category": "Chairs",
-        "discount": 0
-    },
-    {
-        "id": 27,
-        "name": "Razer Iskur V2 - Black / Green",
-        "description": "Ergonomic Gaming Chair with Breathable Comfort",
-        "price": 499.99,
-        "image": "razer_iskur_v2_black_green.png",
-        "category": "Chairs",
-        "discount": 0
-    },
+  {
+    "id": 23,
+    "name": "Razer Iskur V2 NewGen - Black / Green",
+    "description": "Ergonomic Gaming Chair with Breathable Comfort",
+    "price": 649.99,
+    "image": "razer_iskur_v2_newgen_black_green.png",
+    "category": "Chairs",
+    "discount": 0,
+    "metrics": { "sold": 780, "views": 9600, "rating": 4.6, "reviewCount": 180 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 24,
+    "name": "Razer Iskur V2 NewGen - Black",
+    "description": "Ergonomic Gaming Chair with Breathable Comfort",
+    "price": 649.99,
+    "image": "razer_iskur_v2_newgen_black.png",
+    "category": "Chairs",
+    "discount": 0,
+    "metrics": { "sold": 720, "views": 9100, "rating": 4.6, "reviewCount": 165 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 25,
+    "name": "Razer Iskur V2 NewGen - Quartz",
+    "description": "Ergonomic Gaming Chair with Breathable Comfort",
+    "price": 699.99,
+    "image": "razer_iskur_v2_newgen_quartz.png",
+    "category": "Chairs",
+    "discount": 0,
+    "metrics": { "sold": 520, "views": 8400, "rating": 4.5, "reviewCount": 132 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 26,
+    "name": "Razer Iskur V2 NewGen - Light Gray",
+    "description": "Ergonomic Gaming Chair with Breathable Comfort",
+    "price": 699.99,
+    "image": "razer_iskur_v2_newgen_light_gray.png",
+    "category": "Chairs",
+    "discount": 0,
+    "metrics": { "sold": 480, "views": 7900, "rating": 4.5, "reviewCount": 120 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 27,
+    "name": "Razer Iskur V2 - Black / Green",
+    "description": "Ergonomic Gaming Chair with Breathable Comfort",
+    "price": 499.99,
+    "image": "razer_iskur_v2_black_green.png",
+    "category": "Chairs",
+    "discount": 0,
+    "metrics": { "sold": 1600, "views": 15200, "rating": 4.7, "reviewCount": 420 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
 
-    {
-        "id": 28,
-        "name": "Razer Leviathan V2",
-        "description": "PC Gaming Soundbar with Subwoofer",
-        "price": 249.99,
-        "image": "razer_leviathan_v2.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 29,
-        "name": "Razer Leviathan V2 X",
-        "description": "PC Gaming Soundbar",
-        "price": 99.99,
-        "image": "razer_leviathan_v2_x.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 30,
-        "name": "Razer Nommo V2 Pro",
-        "description": "Full-Range 2.1 PC Gaming Speakers with Wireless Subwoofer",
-        "price": 449.99,
-        "image": "razer_nommo_v2_pro.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 31,
-        "name": "Razer Nommo Pro",
-        "description": "Full-Range 2.1 PC Gaming Speakers with Wireless Subwoofer",
-        "price": 299.99,
-        "image": "razer_nommo_v2_pro.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 32,
-        "name": "Razer Nommo V2 X",
-        "description": "Full-Range 2.0 PC Gaming Speakers",
-        "price": 149.99,
-        "image": "razer_nommo_v2.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 33,
-        "name": "Razer Leviathan",
-        "description": "The All-In-One Desktop Bluetooth Soundbar with Subwoofer",
-        "price": 229.99,
-        "image": "razer_leviathan.png",
-        "category": "Speakers",
-        "discount": 0
-    },
-    {
-        "id": 34,
-        "name": "Razer Leviathan V2",
-        "description": "PC Gaming Soundbar with Subwoofer",
-        "price": 249.99,
-        "image": "razer_leviathan_v2.png",
-        "category": "Speakers",
-        "discount": 0
-    }
+  {
+    "id": 28,
+    "name": "Razer Leviathan V2",
+    "description": "PC Gaming Soundbar with Subwoofer",
+    "price": 249.99,
+    "image": "razer_leviathan_v2.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 1400, "views": 16800, "rating": 4.6, "reviewCount": 510 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 29,
+    "name": "Razer Leviathan V2 X",
+    "description": "PC Gaming Soundbar",
+    "price": 99.99,
+    "image": "razer_leviathan_v2_x.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 4200, "views": 28400, "rating": 4.8, "reviewCount": 1200 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 30,
+    "name": "Razer Nommo V2 Pro",
+    "description": "Full-Range 2.1 PC Gaming Speakers with Wireless Subwoofer",
+    "price": 449.99,
+    "image": "razer_nommo_v2_pro.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 820, "views": 12600, "rating": 4.6, "reviewCount": 310 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 31,
+    "name": "Razer Nommo Pro",
+    "description": "Full-Range 2.1 PC Gaming Speakers with Wireless Subwoofer",
+    "price": 299.99,
+    "image": "razer_nommo_v2_pro.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 540, "views": 9100, "rating": 4.5, "reviewCount": 205 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 32,
+    "name": "Razer Nommo V2 X",
+    "description": "Full-Range 2.0 PC Gaming Speakers",
+    "price": 149.99,
+    "image": "razer_nommo_v2.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 980, "views": 14200, "rating": 4.6, "reviewCount": 380 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 33,
+    "name": "Razer Leviathan",
+    "description": "The All-In-One Desktop Bluetooth Soundbar with Subwoofer",
+    "price": 229.99,
+    "image": "razer_leviathan.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 760, "views": 10800, "rating": 4.4, "reviewCount": 260 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 34,
+    "name": "Razer Leviathan V2",
+    "description": "PC Gaming Soundbar with Subwoofer",
+    "price": 249.99,
+    "image": "razer_leviathan_v2.png",
+    "category": "Speakers",
+    "discount": 0,
+    "metrics": { "sold": 1380, "views": 16400, "rating": 4.6, "reviewCount": 498 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 35,
+    "name": "Razer Thunderbolt 4 Cable - 0.8 M",
+    "description": "Thunderbolt 4 Cable",
+    "price": 34.99,
+    "image": "razer_thunderbolt_4_cable_0_8m.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 800, "views": 12400, "rating": 4.6, "reviewCount": 298 },
+    "tags": ["BEST_SELLER", "POPULAR"]
+  },
+  {
+    "id": 36,
+    "name": "Razer Thunderbolt 4 Cable - 2 m",
+    "description": "Thunderbolt 4 Cable",
+    "price": 69.99,
+    "image": "razer_thunderbolt_4_cable_2m.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 620, "views": 9800, "rating": 4.5, "reviewCount": 210 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 37,
+    "name": "Razer Cobra + Gigantus V2 - Medium - Cinnamoroll Edition Bundle",
+    "description": "Lightweight Wired Gaming Mouse with Razer Chroma™ RGB",
+    "price": 99.98,
+    "image": "razer_cobra_gigantus_v2_cinnamoroll_bundle.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 420, "views": 7600, "rating": 4.4, "reviewCount": 145 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 38,
+    "name": "Razer Gigantus V2 - Large - Faker Edition",
+    "description": "Soft gaming mouse mat for speed and control",
+    "price": 49.99,
+    "image": "razer_gigantus_v2_large_faker_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 380, "views": 7200, "rating": 4.3, "reviewCount": 130 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 39,
+    "name": "Razer HyperFlux V2 Wireless Charging System - Cloth Edition",
+    "description": "Wireless Charging Gaming Mouse Mat & Puck",
+    "price": 119.99,
+    "image": "razer_hyperflux_v2_cloth_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 290, "views": 6400, "rating": 4.2, "reviewCount": 98 },
+    "tags": []
+  },
+  {
+    "id": 40,
+    "name": "Razer Ornata V3 Tenkeyless - Cinnamoroll Edition",
+    "description": "Low-profile RGB Tenkeyless Mecha-Membrane RGB Keyboard",
+    "price": 119.99,
+    "image": "razer_ornata_v3_tenkeyless_cinnamoroll_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 250, "views": 5800, "rating": 4.1, "reviewCount": 85 },
+    "tags": []
+  },
+  {
+    "id": 41,
+    "name": "Razer Huntsman V3 Pro Tenkeyless 8KHz - Esports Green Edition",
+    "description": "Analog Optical Esports Keyboard",
+    "price": 249.99,
+    "image": "razer_huntsman_v3_pro_tenkeyless_8khz_green.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 180, "views": 5200, "rating": 4.3, "reviewCount": 72 },
+    "tags": []
+  },
+  {
+    "id": 42,
+    "name": "Razer BlackWidow V4 75% Barebones",
+    "description": "Hot-swappable Mechanical Gaming Keyboard",
+    "price": 139.99,
+    "image": "razer_blackwidow_v4.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 130, "views": 4800, "rating": 4.4, "reviewCount": 60 },
+    "tags": []
+  },
+  {
+    "id": 43,
+    "name": "Razer DeathStalker V2 Pro Tenkeyless - Clicky Optical Switch",
+    "description": "Wireless Low-Profile RGB Tenkeyless Optical Keyboard",
+    "price": 99.99,
+    "image": "razer_deathstalker_v2_pro.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 120, "views": 4200, "rating": 4.3, "reviewCount": 55 },
+    "tags": []
+  },
+  {
+    "id": 44,
+    "name": "Razer Wolverine V3 Pro 8K PC - Esports Green Edition",
+    "description": "Wireless Esports Controller for PC",
+    "price": 209.99,
+    "image": "razer_wolverine_v3_pro_8k_pc_esports_green_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 150, "views": 4600, "rating": 4.4, "reviewCount": 65 },
+    "tags": []
+  },
+  {
+    "id": 45,
+    "name": "Razer Wolverine V3 Pro - Esports Green Edition",
+    "description": "Wireless Esports Gaming Controller with Razer™ HyperSpeed Wireless for Xbox and PC",
+    "price": 209.99,
+    "image": "razer_wolverine_v3_pro_esports_green_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 220, "views": 6000, "rating": 4.5, "reviewCount": 88 },
+    "tags": []
+  },
+  {
+    "id": 46,
+    "name": "Razer Raiju V3 Pro - Esports Green Edition",
+    "description": "Wireless Esports Controller for PlayStation 5 & PC",
+    "price": 229.99,
+    "image": "razer_raiju_v3_pro_esports_green_editio.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 300, "views": 7200, "rating": 4.6, "reviewCount": 150 },
+    "tags": ["POPULAR"]
+  },
+  {
+    "id": 47,
+    "name": "Razer Kitsune - Esports Green Edition",
+    "description": "All-Button Optical Arcade Controller with Razer™ Optical Switches for PS5™ and PC",
+    "price": 309.99,
+    "image": "razer_kitsune_esports_green_edition.png",
+    "category": "Accessories",
+    "discount": 0,
+    "metrics": { "sold": 280, "views": 6800, "rating": 4.5, "reviewCount": 140 },
+    "tags": []
+  }
 ]

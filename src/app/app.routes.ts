@@ -25,4 +25,12 @@ export const routes: Routes = [
     path: 'cart',
     loadComponent: () => import('./page/cart/cart.page').then( m => m.CartPage)
   },
+  {
+    path: 'product-card',
+    loadComponent: () => import('./components/product-card/product-card.page').then( m => m.ProductCardPage)
+  },
+  {
+    path: 'bestseller-card',
+    loadComponent: () => import('./components/bestseller-card/bestseller-card.page').then( m => m.BestsellerCardPage)
+  },
 ];
