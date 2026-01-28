@@ -1,0 +1,106 @@
+:host {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.best-selling-card {
+  display: flex;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 10px;
+  gap: 16px;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03); // Very soft, large shadow
+  border: 1px solid rgba(0, 0, 0, 0.03); // Subtle border for definition
+  transition: transform 0.2s ease;
+
+  &:active {
+    transform: scale(0.98); // Feedback when tapped
+  }
+
+  .img-box {
+    width: 90px;
+    height: 90px;
+    background: #f8f9fb; // Clean, cool-grey background
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+
+    .top-seller-badge {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      background: var(--ion-color-primary);
+      color: white;
+      font-size: 0.6rem;
+      font-weight: 800;
+      padding: 4px 6px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(var(--ion-color-primary-rgb), 0.3);
+    }
+
+    img {
+      width: 80%;
+      height: 80%;
+      object-fit: contain;
+    }
+  }
+
+  .item-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 80px; // Fixed height to align with image
+
+    h4 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1a1c1e;
+      letter-spacing: -0.3px;
+    }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      margin-top: 4px;
+
+      ion-icon {
+        font-size: 11px;
+      }
+
+      .rating-val {
+        font-size: 0.75rem;
+        color: #8e8e93;
+        font-weight: 600;
+        margin-left: 4px;
+      }
+    }
+
+    .action-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .price-text {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #1a1c1e; // Or use var(--ion-color-primary) if you want it blue
+      }
+
+      .order-btn {
+        --background: #2f2f2f; // Dark chic button
+        --color: white;
+        --box-shadow: none;
+        height: 32px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        margin: 0;
+      }
+    }
+  }
+}

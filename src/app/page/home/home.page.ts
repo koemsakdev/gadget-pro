@@ -18,6 +18,8 @@ import { desktopOutline, laptopOutline, searchOutline, headsetOutline, add, star
 
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
+import { ProductCardComponent } from '../../components/product-card/product-card.component';
+import { BestsellerCardComponent } from '../../components/bestseller-card/bestseller-card.component';
 
 @Component({
   selector: 'app-home',
@@ -37,6 +39,8 @@ import { Product } from '../../models/product.model';
     IonToolbar,
     CommonModule,
     FormsModule,
+    ProductCardComponent,
+    BestsellerCardComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   encapsulation: ViewEncapsulation.None
@@ -77,7 +81,7 @@ export class HomePage implements OnInit {
     },
     {
       category_id: 4,
-      name: "Speaker",
+      name: "Speakers",
       icon_img: "./assets/icon/speaker.svg"
     },
     {
@@ -89,7 +93,25 @@ export class HomePage implements OnInit {
 
   selectCategory(category_name: string) {
     this.selectedCategory = category_name;
-    // You can also trigger a filter function here to update the product list
+    this.loadData();
+  }
+
+  handleAddToCart(product: any) {
+    console.log('Added to cart:', product.name);
+    // Add your cart logic here
+  }
+
+  handleFavorite(product: any) {
+    console.log('Toggled favorite for:', product.name);
+  }
+  handleOrder(product: any) {
+    console.log('Order placed for:', product.name);
+    // Add navigation or cart logic here
+  }
+
+  loadData() {
+    this.productService.getBestSellersByCategory(this.selectedCategory, 5).subscribe(data => this.bestSellers = data);
+    this.productService.getPopularByCategory(this.selectedCategory, 5).subscribe(data => this.popularProducts = data);
   }
 
   constructor(private productService: ProductService) {
@@ -97,7 +119,6 @@ export class HomePage implements OnInit {
   }
 
   ngOnInit() {
-    this.productService.getBestSellersByCategory(this.selectedCategory, 5).subscribe(data => this.bestSellers = data);
-    this.productService.getPopularByCategory(this.selectedCategory, 5).subscribe(data => this.popularProducts = data);
+    this.loadData();
   }
 }
