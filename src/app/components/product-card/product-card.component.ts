@@ -1,15 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { addIcons } from 'ionicons';
 import { cartOutline, heartOutline, heart } from 'ionicons/icons';
-import { IonCard, IonButton, IonIcon, IonCardContent, IonText } from '@ionic/angular/standalone';
+import { IonCard, IonButton, IonIcon, IonCardContent, IonText, IonBadge } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
 import { FavoritesService } from 'src/app/services/favorites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
-  imports: [IonCard, IonButton, IonIcon, IonCardContent, IonText, CommonModule],
+  imports: [IonCard, IonButton, IonIcon, IonCardContent, IonText, CommonModule, IonBadge],
   standalone: true
 })
 export class ProductCardComponent implements OnInit {
@@ -22,11 +23,17 @@ export class ProductCardComponent implements OnInit {
     this.favoriteChanged.emit(item);
   }
 
-  addToCart(product: any) {
+  addToCart(event: Event, product: any) {
+    event.stopPropagation();
     this.add.emit(product);
+    this.cartService.addToCart(product);
   }
 
-  constructor(private favService: FavoritesService) {
+  getQuantity(): number {
+    return this.cartService.getQuantityById(this.p.id);
+  }
+
+  constructor(private favService: FavoritesService, private cartService: CartService) {
     addIcons({cartOutline,heartOutline,heart});
   }
 

@@ -1,6 +1,10 @@
 <div class="best-selling-card">
   <div class="img-box">
-    <ion-button fill="clear" class="favorite-btn" (click)="toggleFavorite($event, item)">
+    <ion-button
+      fill="clear"
+      class="favorite-btn"
+      (click)="toggleFavorite($event, item)"
+    >
       <ion-icon
         [name]="item.isFavorite ? 'heart' : 'heart-outline'"
         [color]="item.isFavorite ? 'danger' : 'medium'"
@@ -8,6 +12,10 @@
     </ion-button>
     <img [src]="'./assets/product-imgs/' + item.image" alt="product" />
   </div>
+  
+  <ion-badge color="danger" class="qty-badge" *ngIf="getQuantity() > 0">
+    {{ getQuantity() }}
+  </ion-badge>
 
   <div class="item-info">
     <div class="text-group">
@@ -25,13 +33,16 @@
     <div class="action-row">
       <span class="price-text">${{ item.price }}</span>
       <ion-button
-        (click)="onOrder()"
+        (click)="onOrder($event)"
         size="small"
         shape="round"
         class="order-btn"
       >
         Order
       </ion-button>
+      <ion-badge color="danger" class="qty-badge" *ngIf="getQuantity() > 0">
+        {{ getQuantity() }}
+      </ion-badge>
     </div>
   </div>
 </div>

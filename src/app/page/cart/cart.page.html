@@ -1,13 +1,73 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>cart</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/tabs/home"
+        icon="chevron-back-outline"
+      ></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Cart</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cart</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="items.length === 0" class="ion-text-center ion-padding mt-5">
+    <ion-icon
+      name="cart-outline"
+      style="font-size: 64px"
+      color="medium"
+    ></ion-icon>
+    <h3>Your cart is empty</h3>
+    <ion-button fill="clear" routerLink="/tabs/home">Go Shopping</ion-button>
+  </div>
+
+  <ion-list lines="none" *ngIf="items.length > 0">
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item class="cart-item">
+        <ion-thumbnail slot="start">
+          <img [src]="'./assets/product-imgs/' + item.image" />
+        </ion-thumbnail>
+
+        <ion-label>
+          <h2>{{ item.name }}</h2>
+          <p class="price-text">${{ item.price }}</p>
+        </ion-label>
+
+        <div slot="end" class="quantity-control">
+          <ion-button fill="clear" (click)="decrease(item.id)">
+            <ion-icon name="remove-circle-outline"></ion-icon>
+          </ion-button>
+          <span class="qty-number">{{ item.quantity }}</span>
+          <ion-button fill="clear" (click)="increase(item)">
+            <ion-icon name="add-circle-outline"></ion-icon>
+          </ion-button>
+        </div>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option color="danger" (click)="remove(item.id)">
+          <ion-icon slot="icon-only" name="trash"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
 </ion-content>
+
+<ion-footer class="ion-no-border" *ngIf="items.length > 0">
+  <div class="summary-card">
+    <div class="summary-row">
+      <span>Total Amount</span>
+      <span class="total-price">${{ total | number:'1.2-2' }}</span>
+    </div>
+    <ion-button
+      expand="block"
+      shape="round"
+      class="checkout-btn"
+      (click)="checkout()"
+      [disabled]="isCheckoutLoading"
+    >
+      <span *ngIf="!isCheckoutLoading">Checkout Now</span>
+      <ion-spinner name="crescent" *ngIf="isCheckoutLoading"></ion-spinner>
+    </ion-button>
+  </div>
+</ion-footer>

@@ -67,6 +67,17 @@
     }
   }
 
+  .qty-badge {
+    position: absolute;
+    top: 8px;
+    left: 7px;
+    padding: 3px 7px;
+    padding-top: 4px;
+    font-size: 0.8rem;
+
+    border-radius: 40px;
+  }
+
   .image-container {
     display: flex;
     justify-content: center;
@@ -106,18 +117,15 @@
       align-items: center;
 
       .price {
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: 700;
         color: var(--ion-color-primary);
       }
 
       .add-btn {
         // 1. Remove the extra space Ionic leaves for text
-        --padding-start: 0;
-        --padding-end: 0;
-
-        // 2. Control the size (The image shows a slightly elongated pill)
-        width: 48px;
+        --padding-start: 6px;
+        --padding-end: 6px;
         margin: 0;
 
         // 3. Center the icon
@@ -126,7 +134,7 @@
         justify-content: center;
 
         ion-icon {
-          font-size: 1.2rem; // Adjust icon size
+          font-size: 1rem; // Adjust icon size
           margin: 0; // Remove any default icon margins
         }
 
@@ -134,5 +142,12 @@
         --border-radius: 40px;
       }
     }
+  }
+}
+
+.button-wrapper {
+  position: relative;
+  .add-btn {
+    margin: 0; // Ensure no extra offset
   }
 }

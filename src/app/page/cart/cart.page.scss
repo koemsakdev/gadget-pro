@@ -1,0 +1,81 @@
+.cart-item {
+  --padding-start: 16px;
+  --background: #ffffff;
+  margin-bottom: 8px;
+  box-shadow:
+    rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+
+  ion-thumbnail {
+    --size: 80px;
+    border-radius: 12px;
+    padding: 4px;
+    margin-right: 12px;
+
+    img {
+      // 3. Ensure the image fits nicely
+      width: 100%;
+      height: 100%;
+      object-fit: contain; // Use 'contain' for products with white backgrounds
+    }
+  }
+
+  h2 {
+    font-size: 0.8rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // Limits text to exactly 2 lines
+    -webkit-box-orient: vertical;
+    overflow: hidden; // Hides the rest
+    text-overflow: ellipsis; // Adds the "..."
+
+    // Optional: ensures the line height is consistent
+    line-height: 1.2;
+    max-height: 2.4em;
+  }
+
+  .price-text {
+    font-weight: 700;
+    color: var(--ion-color-primary);
+    font-size: 1.1rem;
+  }
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .qty-number {
+    font-weight: 800;
+    font-size: 1rem;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  ion-button {
+    --padding-start: 0;
+    --padding-end: 0;
+    font-size: 1.5rem;
+  }
+}
+
+.summary-card {
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 -10px 20px rgba(0, 0, 0, 0.05);
+
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    .total-price {
+      font-size: 1.4rem;
+      color: #000;
+      font-weight: 800;
+    }
+  }
+}

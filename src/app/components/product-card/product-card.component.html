@@ -1,12 +1,20 @@
 <ion-card class="product-card">
   <div class="discount-badge" *ngIf="p.discount">-{{ p.discount }}%</div>
 
-  <ion-button fill="clear" class="favorite-btn" (click)="toggleFavorite($event, p)">
+  <ion-button
+    fill="clear"
+    class="favorite-btn"
+    (click)="toggleFavorite($event, p)"
+  >
     <ion-icon
       [name]="p.isFavorite ? 'heart' : 'heart-outline'"
       [color]="p.isFavorite ? 'danger' : 'medium'"
     ></ion-icon>
   </ion-button>
+
+  <ion-badge color="danger" class="qty-badge" *ngIf="getQuantity() > 0">
+    {{ getQuantity() }}
+  </ion-badge>
 
   <div class="image-container">
     <img [src]="'./assets/product-imgs/' + p.image" />
@@ -24,7 +32,7 @@
       <ion-button
         size="small"
         shape="round"
-        (click)="addToCart(p)"
+        (click)="addToCart($event, p)"
         class="add-btn"
       >
         <ion-icon name="cart-outline"></ion-icon>
