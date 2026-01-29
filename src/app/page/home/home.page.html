@@ -61,12 +61,7 @@
 
   <ion-row class="product-grid">
     <ion-col size="6" size-md="6" size-lg="4" *ngFor="let p of popularProducts">
-      <app-product-card
-        [p]="p"
-        (add)="handleAddToCart($event)"
-        (fav)="handleFavorite($event)"
-      >
-      </app-product-card>
+      <app-product-card [p]="p" (add)="handleAddToCart($event)" (favoriteChanged)="loadData()"></app-product-card>
     </ion-col>
   </ion-row>
 
@@ -84,6 +79,7 @@
       [item]="p"
       [rank]="i + 1"
       (order)="handleOrder($event)"
+      (favoriteChanged)="loadData()"
     >
     </app-bestseller-card>
   </div>

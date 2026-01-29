@@ -1,7 +1,7 @@
 <ion-card class="product-card">
   <div class="discount-badge" *ngIf="p.discount">-{{ p.discount }}%</div>
 
-  <ion-button fill="clear" class="favorite-btn" (click)="toggleFavorite(p)">
+  <ion-button fill="clear" class="favorite-btn" (click)="toggleFavorite($event, p)">
     <ion-icon
       [name]="p.isFavorite ? 'heart' : 'heart-outline'"
       [color]="p.isFavorite ? 'danger' : 'medium'"

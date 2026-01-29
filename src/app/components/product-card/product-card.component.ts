@@ -3,6 +3,7 @@ import { addIcons } from 'ionicons';
 import { cartOutline, heartOutline, heart } from 'ionicons/icons';
 import { IonCard, IonButton, IonIcon, IonCardContent, IonText } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-product-card',
@@ -14,18 +15,19 @@ import { CommonModule } from '@angular/common';
 export class ProductCardComponent implements OnInit {
   @Input() p: any;
   @Output() add = new EventEmitter();
-  @Output() fav = new EventEmitter();
-  toggleFavorite(product: any) {
-    product.isFavorite = !product.isFavorite;
-    this.fav.emit(product);
+  @Output() favoriteChanged = new EventEmitter<any>();
+  toggleFavorite(event: Event, item: any) {
+    event.stopPropagation(); 
+    item.isFavorite = this.favService.toggleFavorite(item.id);
+    this.favoriteChanged.emit(item);
   }
 
   addToCart(product: any) {
     this.add.emit(product);
   }
 
-  constructor() {
-    addIcons({ cartOutline, heartOutline, heart })
+  constructor(private favService: FavoritesService) {
+    addIcons({cartOutline,heartOutline,heart});
   }
 
   ngOnInit() { }

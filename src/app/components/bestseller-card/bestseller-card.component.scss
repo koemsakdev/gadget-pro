@@ -26,18 +26,46 @@
     align-items: center;
     justify-content: center;
     position: relative;
-
-    .top-seller-badge {
+    .favorite-btn {
       position: absolute;
-      top: -5px;
+      top: -16px;
       left: -5px;
-      background: var(--ion-color-primary);
-      color: white;
-      font-size: 0.6rem;
-      font-weight: 800;
-      padding: 4px 6px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(var(--ion-color-primary-rgb), 0.3);
+      z-index: 10;
+
+      // 1. Force the size of the button
+      width: 32px;
+      height: 30px;
+      margin: 0;
+
+      // 2. Remove Ionic's default spacing
+      --padding-start: 0;
+      --padding-end: 0;
+      --padding-top: 0;
+      --padding-bottom: 0;
+      --border-radius: 50%; // Makes the ripple/background circular
+
+      // 3. Clear the background
+      --background: transparent;
+      --background-activated: transparent;
+      --background-focused: transparent;
+      --background-hover: rgba(0, 0, 0, 0.05);
+      --box-shadow: none;
+
+      ion-icon {
+        font-size: 1.4rem;
+        color: var(--ion-color-medium);
+
+        &.is-favorite {
+          color: var(--ion-color-danger);
+        }
+      }
+
+      &::part(native) {
+        padding: 0;
+        &::after {
+          display: none;
+        }
+      }
     }
 
     img {

@@ -7,18 +7,21 @@ import {
   IonTitle,
   IonToolbar,
   IonButtons,
-  IonBackButton,
   IonButton,
   IonIcon,
   IonSearchbar,
   IonText,
   ActionSheetController,
+  IonBackButton,
+  IonBadge
 } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { optionsOutline, cartOutline, searchOutline } from 'ionicons/icons';
+import { optionsOutline, cartOutline, searchOutline, chevronBackOutline } from 'ionicons/icons';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 import { BestsellerCardComponent } from "src/app/components/bestseller-card/bestseller-card.component";
+import { FavoritesService } from 'src/app/services/favorites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-best-seller',
@@ -30,7 +33,6 @@ import { BestsellerCardComponent } from "src/app/components/bestseller-card/best
     IonSearchbar,
     IonIcon,
     IonButton,
-    IonBackButton,
     IonButtons,
     IonContent,
     IonHeader,
@@ -38,12 +40,15 @@ import { BestsellerCardComponent } from "src/app/components/bestseller-card/best
     IonToolbar,
     CommonModule,
     FormsModule,
-    BestsellerCardComponent
-],
+    BestsellerCardComponent,
+    IonBackButton,
+    IonBadge
+  ],
 })
 export class BestSellerPage implements OnInit {
   bestSellerProducts: Product[] = [];
   filteredProducts: Product[] = [];
+  cartCount = 0;
 
   currentSort: string = 'all';
   async presentSortSheet() {
@@ -134,21 +139,31 @@ export class BestSellerPage implements OnInit {
   }
 
   handleOrder(product: any) {
-    console.log('Order placed for:', product.name);
-    // Add navigation or cart logic here
+    this.cartService.addToCart(product);
   }
 
   constructor(
+    private cartService: CartService,
     private productService: ProductService,
     private actionSheetCtrl: ActionSheetController,
+    private favService: FavoritesService
   ) {
-    addIcons({cartOutline,optionsOutline,searchOutline});
+    addIcons({chevronBackOutline,cartOutline,optionsOutline,searchOutline});
   }
 
   ngOnInit() {
     this.productService.getBestSellers().subscribe((data) => {
-      this.bestSellerProducts = data;
-      this.filteredProducts = [...data];
+      const processedData = data.map(product => ({
+        ...product,
+        isFavorite: this.favService.isFavorite(product.id)
+      }));
+
+      this.bestSellerProducts = processedData;
+      this.filteredProducts = [...processedData];
+    });
+
+    this.cartService.cartCount$.subscribe(count => {
+      this.cartCount = count;
     });
   }
 }

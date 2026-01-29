@@ -3,6 +3,7 @@ import { addIcons } from 'ionicons';
 import { cartOutline, heartOutline, heart, star, starHalf, starHalfOutline } from 'ionicons/icons';
 import { IonButton, IonIcon } from '@ionic/angular/standalone';
 import { CommonModule } from '@angular/common';
+import { FavoritesService } from 'src/app/services/favorites.service';
 
 @Component({
   selector: 'app-bestseller-card',
@@ -15,6 +16,13 @@ export class BestsellerCardComponent implements OnInit {
   @Input() item: any;
   @Output() order = new EventEmitter<any>();
   @Input() rank: number = 0;
+  @Output() favoriteChanged = new EventEmitter<any>();
+
+  toggleFavorite(event: Event, item: any) {
+    event.stopPropagation();
+    item.isFavorite = this.favService.toggleFavorite(item.id);
+    this.favoriteChanged.emit(item);
+  }
 
   onOrder() {
     this.order.emit(this.item);
@@ -32,9 +40,9 @@ export class BestsellerCardComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private favService: FavoritesService) {
     addIcons({ star, cartOutline, heartOutline, heart, starHalf, starHalfOutline });
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

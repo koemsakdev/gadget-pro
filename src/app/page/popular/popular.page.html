@@ -1,7 +1,7 @@
 <ion-header class="ion-no-border">
   <ion-toolbar mode="md">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/tabs/home"></ion-back-button>
+      <ion-back-button defaultHref="/tabs/home" icon="chevron-back-outline"></ion-back-button>
     </ion-buttons>
 
     <ion-title>
@@ -11,8 +11,9 @@
     </ion-title>
 
     <ion-buttons slot="end">
-      <ion-button fill="clear" color="dark">
+      <ion-button fill="clear" color="dark" class="cart-btn">
         <ion-icon slot="icon-only" name="cart-outline"></ion-icon>
+        <ion-badge color="danger" *ngIf="cartCount > 0">{{ cartCount }}</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
@@ -55,7 +56,6 @@
       <app-product-card
         [p]="p"
         (add)="handleAddToCart($event)"
-        (fav)="handleFavorite($event)"
       >
       </app-product-card>
     </ion-col>

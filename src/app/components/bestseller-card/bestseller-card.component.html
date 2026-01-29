@@ -1,6 +1,11 @@
 <div class="best-selling-card">
   <div class="img-box">
-    <div class="top-seller-badge">#{{ rank }}</div>
+    <ion-button fill="clear" class="favorite-btn" (click)="toggleFavorite($event, item)">
+      <ion-icon
+        [name]="item.isFavorite ? 'heart' : 'heart-outline'"
+        [color]="item.isFavorite ? 'danger' : 'medium'"
+      ></ion-icon>
+    </ion-button>
     <img [src]="'./assets/product-imgs/' + item.image" alt="product" />
   </div>
 

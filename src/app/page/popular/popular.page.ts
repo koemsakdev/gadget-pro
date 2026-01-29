@@ -15,6 +15,7 @@ import {
   IonSearchbar,
   IonText,
   ActionSheetController,
+  IonBadge
 } from '@ionic/angular/standalone';
 import { Product } from 'src/app/models/product.model';
 import { ProductCardComponent } from 'src/app/components/product-card/product-card.component';
@@ -26,6 +27,8 @@ import {
   searchOutline,
 } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
+import { FavoritesService } from 'src/app/services/favorites.service';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-popular',
@@ -48,15 +51,19 @@ import { addIcons } from 'ionicons';
     CommonModule,
     FormsModule,
     ProductCardComponent,
+    IonBadge
   ],
 })
 export class PopularPage implements OnInit {
   popularProducts: Product[] = [];
   filteredProducts: Product[] = [];
+  cartCount = 0;
 
   constructor(
+    private cartService: CartService,
     private productService: ProductService,
     private actionSheetCtrl: ActionSheetController,
+    private favService: FavoritesService
   ) {
     addIcons({
       cartOutline,
@@ -84,12 +91,7 @@ export class PopularPage implements OnInit {
   }
 
   handleAddToCart(product: any) {
-    console.log('Added to cart:', product.name);
-    // Add your cart logic here
-  }
-
-  handleFavorite(product: any) {
-    console.log('Toggled favorite for:', product.name);
+    this.cartService.addToCart(product);
   }
 
   currentSort: string = 'all';
@@ -163,10 +165,21 @@ export class PopularPage implements OnInit {
     return labels[type] || 'Sort By';
   }
 
+  
+
   ngOnInit() {
     this.productService.getPopular().subscribe((data) => {
-      this.popularProducts = data;
-      this.filteredProducts = [...data];
+      const processedData = data.map(product => ({
+        ...product,
+        isFavorite: this.favService.isFavorite(product.id)
+      }));
+      
+      this.popularProducts = processedData;
+      this.filteredProducts = [...processedData];
+    });
+
+    this.cartService.cartCount$.subscribe(count => {
+      this.cartCount = count;
     });
   }
 }

@@ -1,13 +1,36 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>favorite</ion-title>
+    <ion-title>My Favorites</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">favorite</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="isLoading" class="ion-text-center ion-padding">
+    <ion-spinner name="crescent"></ion-spinner>
+  </div>
+
+  <div
+    *ngIf="!isLoading && favoriteProducts.length === 0"
+    class="empty-state ion-text-center"
+  >
+    <ion-icon name="heart-outline" color="medium"></ion-icon>
+    <h3>No favorites yet</h3>
+    <p>Your favorite items will appear here.</p>
+    <ion-button fill="outline" routerLink="/tabs/home">Go Shopping</ion-button>
+  </div>
+
+  <div class="best-sellers-list" *ngIf="!isLoading && favoriteProducts.length > 0">
+    <div class="filter-header">
+    <p class="title">My Favorite Products</p>
+  </div>
+
+    <app-bestseller-card
+      *ngFor="let p of favoriteProducts; let i = index"
+      [item]="p"
+      [rank]="i + 1"
+      (favoriteChanged)="handleFavChange($event)" 
+      (order)="handleOrder($event)"
+    >
+    </app-bestseller-card>
+  </div>
 </ion-content>

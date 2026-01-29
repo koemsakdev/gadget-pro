@@ -142,9 +142,6 @@ export class HomePage implements OnInit {
     // Add your cart logic here
   }
 
-  handleFavorite(product: any) {
-    console.log('Toggled favorite for:', product.name);
-  }
   handleOrder(product: any) {
     console.log('Order placed for:', product.name);
     // Add navigation or cart logic here
@@ -153,10 +150,30 @@ export class HomePage implements OnInit {
   loadData() {
     this.productService
       .getBestSellersByCategory(this.selectedCategory, 6)
-      .subscribe((data) => (this.bestSellers = data));
+      .subscribe((data) => {
+        const savedFavs = localStorage.getItem('favorites');
+        const favIds: number[] = savedFavs ? JSON.parse(savedFavs) : [];
+
+        const processedData = data.map(product => ({
+          ...product,
+          isFavorite: favIds.includes(product.id)
+        }));
+
+        this.bestSellers = processedData
+      });
     this.productService
       .getPopularByCategory(this.selectedCategory, 6)
-      .subscribe((data) => (this.popularProducts = data));
+      .subscribe((data) => {
+        const savedFavs = localStorage.getItem('favorites');
+        const favIds: number[] = savedFavs ? JSON.parse(savedFavs) : [];
+
+        const processedData = data.map(product => ({
+          ...product,
+          isFavorite: favIds.includes(product.id)
+        }));
+
+        this.popularProducts = processedData
+      });
   }
 
   constructor(private productService: ProductService) {

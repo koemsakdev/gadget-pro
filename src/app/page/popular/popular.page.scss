@@ -92,3 +92,15 @@ ion-title {
   /* Optional: adds a background tint */
   background: rgba(var(--ion-color-primary-rgb), 0.1);
 }
+
+.cart-btn {
+  position: relative;
+  ion-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 10px;
+    border-radius: 50%;
+    padding: 4px 6px;
+  }
+}
